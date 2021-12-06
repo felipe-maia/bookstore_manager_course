@@ -1,8 +1,17 @@
 package br.com.maia.bookstoremanager.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
+@Data //geters e seters
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Author {
 
     @Id

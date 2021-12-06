@@ -9,7 +9,7 @@ import org.springframework.boot.test.autoconfigure.data.cassandra.DataCassandraT
 import javax.persistence.*;
 
 @Entity
-@Data
+@Data //geters e seters
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
