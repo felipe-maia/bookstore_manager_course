@@ -1,15 +1,11 @@
 package br.com.maia.bookstoremanager.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import br.com.maia.bookstoremanager.entity.Author;
+import lombok.*;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Data
@@ -20,7 +16,7 @@ public class BookDTO {
 
     private Long id;
 
-    @NotBlank
+    @NonNull
     @Size(max = 200)
     private String name;
 
@@ -30,17 +26,17 @@ public class BookDTO {
     @NotNull
     private Integer pages;
 
-    @NotBlank
+    @NonNull
     @Size(max = 100)
-    @Pattern(regexp = "(?:ISBN(?:-10)?:? )?(?=[0-9x]{10}$|(?=(?:[0-9]+[- ])))", message = "ISBN format must be a valid format")
+    //@Pattern(regexp = "(?:ISBN(?:-10)?:? )?(?=[0-9x]{10}$|(?=(?:[0-9]+[- ])))", message = "ISBN format must be a valid format")
     private String isbn;
 
-    @NotNull
+    @NonNull
     @Size(max= 200)
     private String publisherName;
 
     @Valid
     @NotNull
-    private AuthorDTO authorDTO;
+    private AuthorDTO author;
 
 }
